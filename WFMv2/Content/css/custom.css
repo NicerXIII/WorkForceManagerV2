@@ -1,0 +1,404 @@
+body {
+	font-family: 'Nunito', sans-serif !important;
+	overflow-y: auto !important;
+	overflow-x: auto !important;
+	background-color: #f2f2f2 !important;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;               
+  background-color: #d1d1d1;
+  height: 1px;
+}
+
+a:hover {
+	text-decoration: none !important;
+}
+
+/*Navigation Bar*/
+.navbar {
+	z-index: 10;
+	background-color: #343a40 !important;
+}
+
+.navbar a {
+	color: white !important;
+}
+
+.navbar-brand {
+	color: white !important;
+	font-weight: bold !important;
+}
+
+.nav-item .active {
+	color: rgba(255, 255, 255, 0.9) !important;
+	text-decoration: underline;
+}
+
+.nav-item .active:hover {
+	color: white !important;
+	text-decoration: underline;
+}
+
+.nav-link i {
+	margin-top: 2px; 
+	margin-right: 3px;
+}
+
+.active1 {
+	background-color: rgba(52, 58, 64, .8) !important;
+	color: white !important;
+}
+
+.active1:hover {
+	background-color: rgba(52, 58, 64, 0.8) !important;
+	color: white !important;
+}
+
+.dropdown-menu a {
+	color: #222 !important;
+}
+
+.dropdown-menu a.active1 {
+	color: white !important;
+}
+
+.dropdown-item:hover {
+	background-color: #eee;
+	color: #111;
+}
+
+.dropdown-item.disable {
+	background-color: white !important;
+}
+
+.dropdown-item.disable:hover {
+	background-color: white !important;
+}
+
+.ddprofile a:hover {
+	text-decoration: none !important;
+}
+
+.custom-toggler-profile {
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.z-999 {
+	z-index: 999 !important;
+}
+
+.notifbadge{
+  font-size: 20px;
+}
+
+/*SCROLLBAR*/
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, .7); 
+}
+ 
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/*index.php*/
+.small-box h3, .small-box p {
+	color: #222 !important;
+	border-radius: 0 !important;
+}
+
+/*loader*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.loader {
+	width: 100%;
+	height: 3px;
+	background-color: #2885FF;
+	animation: loading 10s ease-in-out;
+}
+
+/*@keyframes loading {
+	0% {
+		width: 0%;
+		background-color: #FF0000;
+	}
+
+	25% {
+		width: 30%;
+		background-color: #FFF200;
+	}
+
+	50% {
+		width: 60%;
+	}
+
+	100% {
+		width: 100%;
+		background-color: #1E9600;
+	}
+}*/
+
+.page { 
+	display: none; padding: 0 0.5em; 
+}
+
+.top-div {
+	background-color: #308DCA; 
+	color: white;
+	text-align: left;
+	margin-top: -50px;
+	padding: 20px 20px 20px 20px; 
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.bigbox {
+	box-shadow: 0 6px 15px -6px #444;
+	border: #999 !important;
+	padding: 10px 20px 30px 20px;
+	background-color: white; 
+	border: 1px solid rgba(0, 0, 0, 0.09) !important;
+	/*border-radius: 10px;*/
+	margin-bottom: 2%;
+}
+
+.btn-custom {
+	background-color: #308DCA !important; 
+	color: white !important;
+}
+
+.btn-custom:hover {
+	background-color: #2D84BD;
+	color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.24);
+}
+
+.btn-custom:focus {
+	/*float: right;*/ 
+	background-color: #308DCA !important; 
+	color: white;
+}
+
+.custom-toggler-profile {
+	display: inline-block;
+	width: 5em;
+	height: 5em;
+	vertical-align: middle;
+	content: "";
+	background: no-repeat center center;
+	background-size: 100% 100%;
+}
+
+.elevate-2 {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.shadow {
+	box-shadow: 0 6px 15px -6px #444 !important;
+}
+
+.no-shadow {
+	box-shadow: 0 0px 0px 0px #444 !important;
+}
+
+.overlay-up {
+	position: relative;
+}
+
+.profile {
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  padding-top: 10%;
+}
+
+.middle1 {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  padding-top: 19%;
+}
+
+.upload-photo {
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.overlay-up:hover .profile {
+	opacity: 0.3;
+}
+
+.overlay-up:hover .middle {
+	opacity: 1;
+}
+
+.overlay-up:hover .middle1 {
+	opacity: 1;
+}
+
+#fileLoader
+{
+    display:none;
+}
+
+#fileLoader1
+{
+    display:none;
+}
+
+.custom-alert {
+	font-size: 100px;
+   	color: red;
+    -webkit-animation: example 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: example 5s infinite;
+}
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example{
+    from {color: red;}
+    to {color: #FBDFA1;}
+}
+
+/* Standard syntax */
+@keyframes example{
+    from {color: red;}
+    to {color: #FBDFA1;}
+}
+
+.custom-alert-check {
+	font-size: 100px;
+   	color: #819830;
+}
+
+.custom-alert-cancel {
+	font-size: 100px;
+   	color: #FB404B;
+}
+
+.btn-custom-primary {
+	background-color: #23CCEF;
+	color: white;
+	padding: 10px 20px 10px 20px;
+}
+
+.btn-custom-primary:hover {
+	background-color: #11BFE3;
+}
+
+.btn-custom-danger {
+	background-color: #FB404B;
+	color: white;
+	padding: 10px 10px 10px 10px;
+}
+
+.btn-custom-danger:hover {
+	background-color: #FA1825;
+}
+
+.page-content {
+  padding : 0 32px;
+}
+
+.mdl-textfield {
+    color: #9E9E9E;
+}
+
+.mdl-textfield__icon {
+    width: 32px;
+    text-align: center;
+    position: absolute;
+    line-height: 1.5;
+}
+
+.mdl-textfield.is-disabled .mdl-textfield__icon {
+    color: rgba(0, 0, 0, 0.26) !important;
+}
+
+.mdl-textfield__icon ~ * {
+    margin-left: 48px;
+    width: calc(100% - 48px);
+}
+
+.mdl-textfield.is-invalid .mdl-textfield__icon {
+    color: #de3226 !important;
+}
+
+.closenotif i{
+  font-size: 10px !important;
+}
+
+.closenotif i:hover{
+  color: #F44336 !important;
+}
+
+.cust-footer {
+	background-color: white;
+}
+
+.cust-icons i {
+	font-size: 40px;
+	color: #333;
+}
+
+.cust-icons a {
+	color: #888;
+}
+
+@media (min-width: 576px) {
+	.custom-modal1 {
+	max-width: 1300px!important;
+	margin: 1.75rem auto;
+	}
+}

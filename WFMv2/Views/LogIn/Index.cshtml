@@ -1,0 +1,194 @@
+﻿@model WFMv2.Models.ViewModel.VMLogIn
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Nunito Fontstyle-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- MDL -->
+    <link href="~/Content/css/material-icon.css" rel="stylesheet" />
+    <link href="~/Content/css/material.css" rel="stylesheet" />
+
+    <!--BOOTSTRAP-->
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--CUSTOMIZE CSS-->
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
+    @*<link href="../css/custom2.css" rel="stylesheet">*@
+
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/js/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/material.min.js"></script>
+
+
+    <title>TREC PACIFIC CORPORATION - Forgot Password</title>
+</head>
+<body style="background-image:url('../Content/img/bg.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff !important; height: 82px !important;">
+        <a href="#" class="navbar-brand"><img src="../Content/img/wfm-logo1.png" class="w-50"></a>
+    </nav>
+    <!--End Navbar-->
+    <!--Container-->
+    <div class="loader fixed-top"  style="width:0%;"></div>
+        <div class="container" style="margin-top: 10%;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="card col-sm-6">
+                        <div class="card-body pb-5 pt-5">
+                            <p class="container mb-4 text-center" style="font-size: 30px;">Sign In</p>
+                            <form id="formSignIn">
+                                <p class="container mb-4 text-center custom-20px">Enter your Employee Number</p>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="material-icons">people_outline</i></span>
+                                    </div>
+                                    @Html.TextBoxFor(m => m.Username, null, new { @type = "number", @class = "form-control input-cust", @id = "empNumber", @placeholder = "Employee Number" })
+                                    <div class="col-md-12">
+                                        <div class="offset-1">
+                                            @Html.ValidationMessageFor(m => m.Username, "", new { @style = "color:red;" })
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="material-icons">lock_outline</i></span>
+                                    </div>
+                                    @Html.TextBoxFor(m => m.Password, null, new { @type = "Password", @class = "form-control input-cust", @id = "Password", @placeholder = "Password" })
+                                    <div class="col-md-12">
+                                        <div class="offset-1">
+                                            @Html.ValidationMessageFor(m => m.Password, "", new { @style = "color:red;" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <label class="ml-3 mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded" for="ShowPassword">
+                                    <input type="checkbox" name="show" id="ShowPassword" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Show Password</span>
+                                    <span class="mdl-checkbox__focus-helper"></span><span class="mdl-checkbox__box-outline"><span class="mdl-checkbox__tick-outline"></span></span><span class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span>
+                                </label>
+
+                                @{
+                                    List<SelectListItem> listItems = new List<SelectListItem>();
+                                    listItems.Add(new SelectListItem
+                                    {
+                                        Text = "SERVICE NOW",
+                                        Value = "2"
+
+                                    });
+                                    listItems.Add(new SelectListItem
+                                    {
+                                        Text = "TREC",
+                                        Value = "1",
+                                        Selected = true
+                                    });
+                                }
+                                <div class="input-group mt-3" style="font-size: 14px;">
+                                    <div class="input-group-prepend form">
+                                        <label class="input-group-text" for="inputGroupSelect01">Choose</label>
+                                    </div>
+                                    @Html.DropDownListFor(m => m.Server, listItems, new { @class = "custom-select", @id = "drpServer" })
+                                </div>
+                                <div align="center">
+                                    <button type="button" class="w-50 mt-4 mb-3 mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-custom" id="btnSignIn" onclick="ocBtnSignIn()">Sign In</button>
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+
+            </div>
+        </div>
+</body>
+</html>
+
+<!--Modal-->
+<div class="modal fade" id="modalErrorLogIn">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p class="modal-title mb-4 mt-3"><i class="material-icons custom-alert-cancel">highlight_off</i></p>
+                <h1>Failed</h1>
+                <br>
+                <button type="button" class="btn btn-custom-danger" data-toggle="modal" data-dismiss="modal" style="width: 100%;">DISMISS</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--End of Modal-->
+<script type="text/javascript">
+    var ocBtnSignIn = function () {
+        debugger
+        if (!$("#formSignIn").valid()) {
+            return false;
+        }
+        loadInit()
+        var data = $("#formSignIn").serialize();
+
+        $.ajax({
+            type: "POST",
+            url: "/LogIn/LogIn",
+            data: data,
+            success: function (response) {
+                var result = response.result;
+                if (result == "T") {
+                    loadEnd();
+                    window.location.href = "/Home/Index";
+                } else if (result != "T" && result == "S") {
+                    loadEnd();
+                    window.location.href = "/HomeSN/Index";
+                } else {
+                    loadEnd();
+                    $("#modalErrorLogIn").modal('show');
+                }
+            },
+            error: function (response) {
+            }
+        });
+
+        function loadInit() {
+            $("body").css("cursor", "wait");
+            $(".loader").removeAttr("hidden");
+            $(".loader").animate({
+                width: '30%',
+            }, 500);
+        }
+
+        function loadEnd() {
+            $(".loader").removeAttr("hidden");
+            $(".loader").animate({
+                width: '100%',
+            }, 500);
+
+            loadReset();
+        }
+
+        function loadReset() {
+            $(".loader").animate({
+                width: '0%',
+            }, 50);
+            $("body").css("cursor", "default");
+        }
+
+    }
+</script>

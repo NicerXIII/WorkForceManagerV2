@@ -1,0 +1,2757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{826F6EAA-AD05-4B03-8046-2CB8C4FF9B05}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WFMv2</RootNamespace>
+    <AssemblyName>WFMv2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeSNController.cs" />
+    <Compile Include="Controllers\LogInController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbsentSLELCount_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Access.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccessEmployeeKioskv3.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Adjustment.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdjustmentDump.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Advance.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdvancesDump.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Announcement.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApproverMatrixGroup.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApproverMatrixMember.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuditLog.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\blabla_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CampaignLog.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CampaignType.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CheckPayrollGeneratedREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChronikerGetDataByEmployeeID_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChronikerGetDataDepartment_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChronikerGetDataEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChronikerGetEmployeeScheduleLogs_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChronikerSaltSelect_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChronikerSelectEmployeeBasicInfo_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChronikerSelectEmployeeLogs_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChronikerSelectUserLogins_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CivilStatu.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComplianceLeaveVerification.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComputeFixNonTaxBreakDown_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComputeTimespansByScheduleID_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Consolidate_Leaves.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTime.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisplayEmployeeList_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisplayEmployeesEmail_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisplayEmployees_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisplayGeneratedPayrollData_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisplayMonthlyReportAbsences_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisplayNoTimeInYesterday_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dtproperty.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dt_getpropertiesbyid_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dt_getpropertiesbyid_u_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EK_1500Gain_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EK_1500LOSE_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeDetail.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeDispute.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeInfo_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskAccess_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskCheckDoubleSched_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskCheckSched_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskCheckTimeInOut_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskDisplay13thMonth_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskDisplayAllEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskDisplayAvailRoom_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskDisplayCampaign_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskDisplayEmployeeOIC_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskDisplayEmployeeSubordinates_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskDisplayNBIClearance_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskDisplayNotificationPerEmpNo_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskDisplaySchedulePerEmployeeByDateRange_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGenerateRoomMonirotingPerDate_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetAbsencesandLatesABSENCES_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetAbsencesandLatesSLEL_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetAbsencesandLates_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetAnnouncementPerDep_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetAttendancePerEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeeAccessList_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeeAdjustment_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeeAdvances_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeeByCampaign_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeeInformationDetails_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeeList_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeeNamePerEmpNo_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeeNumberMD5_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeeOIC_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeePerCampaignID_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeeRepresentation_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeesList_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetEmployeeSubordinateList_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetHolidaySelectByYear_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetLeaveFiledByEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetMedicineLogs_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetMessages_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetModuleName_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetOverBreakByCampaign_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetPayslip_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetPhilhealthLoanDetails_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetSponsor_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetSSSLoanDetails_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskGetTaxTable_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskLoginUser_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskRetrievedCTimeByEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskRetrievedCTime_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskRetrieveEmployeeList_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskRetrieveEquipments_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskRetrieveFileLeaveByEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskRetrieveManagers_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskRetrieveMedicineLogsv3_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskRetrieveMedicineLogs_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskRetrievePayslipDetails_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskRetrieveScheduleAdjustmentApplications_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskSendTemporaryPassword_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeKioskValidateRoom_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeLeaves_Backup_07152015.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeLog.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeLogsBackup.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeMedCert.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeesActive.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeesHistory.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeesInActive.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeTempPassword.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeType.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_Day_Absent.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_ExemptMetricsCheck.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_Leaves.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_Leaves_BackUp10312013.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_Leaves_Filed.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_Leaves_Filed_20110223.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_Leaves_Filed_20110302.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_Leaves_Filed_Dec09.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_Rate.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_Rate_History.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EndOfPayroll.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\f1500ClubGetEmployees_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ForRecomputeEmployees_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FortuneCooky.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Generate40HourRule11122013_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Generate40HourRuleFormatted_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Generate40HourRule_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GenerateEmployeeReportHumanResource_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GenerateHDMFLoanBalance_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GenerateOtherPaySlipData_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratePayrollDataOpt_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratePayrollDataREV2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratePayrollDataRev3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratePayrollDataREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratePayslip_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GenerateSSSLoanBalance_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Get40HourAdjustmentTotal_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Get40HourAdjustmentVL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Get40HourAdjustment_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Get40HourRulex_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAbsencesDetailsNEW_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAbsencesDetails_NEW_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAbsencesDetails_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAbsentStartingFromHireDateWithTimeInandAType2b_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAbsentStartingFromHireDateWithTimeInandAType2REV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAbsentStartingFromHireDateWithTimeInandAType2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAbsentStartingFromHireDateWithTimeInandAType3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAbsentStartingFromHireDateWithTimeInandAType4_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAbsentStartingFromHireDateWithTimeInandAType_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAbsentStartingFromHireDate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAbsentSuspendedVLSLEL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetALLAbsentSLELLatesFromHD2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetALLAbsentSLELLatesFromHD3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetALLAbsentSLELLatesFromHD4_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetALLAbsentSLELLatesFromHD5_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetALLAbsentSLELLatesFromHD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllAttendance_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllBeta_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllCampaign_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllELSLAbsentsfrHD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllLatesELSLAbsentsfrHD1_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllLatesELSLAbsentsfrHD2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllLatesELSLAbsentsfrHDREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllLatesELSLAbsentsfrHD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetALLLatesSLELAbsents_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllNoSchedule_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllReportToAgents_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetALLstartingFromHireDateTesting2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetALLstartingFromHireDateTesting3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetALLstartingFromHireDateTesting_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllWithSetSchedule_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAnnualTax_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetApprovedOTPerEmployee_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAttendance_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAuditDailySchedule_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAuditTrailxx_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAuditTrailx_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAuditTrail_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetBaseComputation_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignAttendancePerCampaignYearLates_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignAttendancePerCampaignYearUndertime_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignAttendancePerEmployeeYearLates_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignAttendancePerEmployeeYearUndertime_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetailsAbsentSuspendedHDbyHOURS_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetailsAbsentSuspendedHD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetailsAbsentSuspendedREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetailsAbsentSuspended_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetailsAbsent_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetailsALLx_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetailsALL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetailsTESTX_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetailsVLSLELREVx_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetailsVLSLELREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetailsVLSLEL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCampaignDetails_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCompleteAttendanceVFSummary_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCompleteAttendanceVF_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetConsolidatedRep91713_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetConsolidatedRepAttendance9302013_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetConsolidatedRepByEmp91713_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetConsolidatedRepByEmp_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetConsolidatedRepEmpDetails91913_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetConsolidatedRepLates91813_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetConsolidatedRepLeaves91813_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetConsolidatedRep_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCurrentCutOff_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCutOffDetails_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDailyScheduleAuditREV2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDailyScheduleAuditREVmc_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDailyScheduleAuditREVxx_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDailyScheduleAuditREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDailyScheduleAudit_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDataHistoryPerEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDataRateHistory_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetELSLAbsentsfrHD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsByTL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsMonthly_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsNewREV15_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsNewREV30_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsNew_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsREV2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsREV3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsREV4_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsREV5_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsREV7_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsREV8new_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsREV8_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsREVTemp_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsSpecDate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsTest_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgentsWeekly_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursAgents_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursREV2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursREV3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursREV4_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursREV5_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursREV6Edited2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursREV6Edited3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursREV6Edited_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursREV6_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursREV7_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursREV8_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursTOMRev_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursTOM_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHoursWithAbsenB4Holiday_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpActualHours_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpCampaignTotalWorkHours_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpLeaveFiled_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeAbsencesSummary_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeAbsentVR_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeAbsent_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeAdjustment_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeAssignment_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeByDepartment_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeByType_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeDayAbsentSummary_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeDayAbsent_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeDetail_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLatesSummary_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeavesdDetailsByReasonType_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeavesdDetails_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeavesFiled_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeaveSummaryLWOPEmpType_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeaveSummaryLWOPwithFromToAndReason_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeaveSummaryLWOP_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeaveSummaryLWP1_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeaveSummaryLWP2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeaveSummaryLWPEmpType_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeaveSummaryLWP_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeaveSummary_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeaveUsed_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeave_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLogs_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNames_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNDLHAMT_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNDLHRAMT_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNDLHR_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNDLH_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNDRDAMTREV_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNDRDAMT_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNDRD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNDSHAMT_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNDSHRAMT_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNDSHR_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNDSH_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeND_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeNYH_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeePayIndividual_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeePayPerEmployee_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeePayREV2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeePayREV3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeePayREV4_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeePayREV5_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeePayREV6_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeePayREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeePay_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeRate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeRegND_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployees2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesActive_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesActualCount_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeSalaries_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeSchedulesOTRestday_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeSchedules_OLD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeSchedules_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GETEMPLOYEESEL2011_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesInterimProcCounting_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GETEMPLOYEESL2011_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesList1_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesListBak_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesListForAttendanceSummary_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesListx_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesList_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesNBIClearance_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesOverBreakByDate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesOverBreakWFM_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeesOverBreak_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GETEMPLOYEESVL2011_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployees_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpNoLogout2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpNoLogout3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpNoLogoutPerDate_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpNoLogout_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpPayTest2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpPayTest3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpPayTest4_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpPayTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpSummaryTotalWorkHoursNew_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpSummaryTotalWorkHoursSpecDate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpSummaryTotalWorkHoursWeekly_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpSummaryTotalWorkHours_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetFinanceEmail_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetGeneralAdjustmentByEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetGeneralAdvancesByEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetGeneralRepresentationByEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetGeneratedPayrollDataDetail_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetGeneratedPayrollDetail_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetGrossSalaryYearly_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHDMFDetails_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHDMFLoan_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHDMFPaymentHistoryWithFilter_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHDMFPaymentHistory_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRepFin_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRepMon2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRepMonFin2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRepMonFin_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRepMon_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRepPayrollFin_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRepPayroll_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRepSun2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRepSunFin2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRepSunFin_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRepSun_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleRep_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleTabSepX_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleTabSep_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleTabXX_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleTabX_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRuleTab_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHourRule_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesStartingFromHireDateWithBeforeAfterRD1_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesStartingFromHireDateWithBeforeAfterRD2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesStartingFromHireDateWithBeforeAfterRD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesStartingFromHireDate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesTodays2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesTodaysTest2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesTodaysTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesTodays_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesTodayxx_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesToday_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesWeeklyRep_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLatesWeekly_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLeaveFiledByEmployeeALL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLeaveFiledByEmployeeOLD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLeaveFiledByEmployeeREV2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLeaveFiledByEmployeeREV3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLeaveFiledByEmployeeREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLeaveFiledByEmployee_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetListOICSubordinate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetMetricCostPeriod_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetMetricDetails_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetModules_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetMonthlyTotalHoursREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetMonthlyTotalHours_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetND2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNDCase1_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNDCase2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNDCase3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNDEugeneTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNDPatched_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNDSHx_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNDSH_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetND_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoSchedulePerDate_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoSchedule_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoTimeInTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoTimeInToday_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoTimeInTracker03142014_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoTimeInTrackerREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoTimeInTracker_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoTimeInYesterday1backup_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoTimeInYesterday1_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoTimeInYesterdayOLD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoTimeInYesterday_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetNoTimeIn_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getOICPositionID_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetOICSubordinateList_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetOTApproval_07292013_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetOTApproval_OLD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetOTApproval_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetOTs_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetOvertime_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPaylist_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayPeriodDate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayroll4MetricCost2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayroll4MetricCostDetail_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayroll4MetricCostSummary_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayroll4MetricCost_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayrollAllFirst_Last_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayrollAll_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayrollCostPeriod_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayrollCutoff_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayrollMonthly_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayroll_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayslipX_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayslip_orig111513_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayslip_orig_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPayslip_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GETPCINFO_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPresentDay_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPreviousMetricsDetails_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPreviousMetrics_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetRecruitHistory_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetReportTo_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetRepresentationPerEmployee_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerAttendance_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendance2011_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceALL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceEmp_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceNDTotsl_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceOPT_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceREV04222014_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceREV20170816_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceREV2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceREV3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceREVBackup_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceREVold_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceREVx_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceREV_03182014_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceREV_040414_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceSummary2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceSummary_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendanceTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendance_OLD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerCompleteAttendance_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerNoSchedules_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSchedulerNoSchedule_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSL30_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSL90_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSLELStartingFromHireDateREV1_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSLELStartingFromHireDateREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSLELStartingFromHireDate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSLEL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSponsorDisqualificationAbsences_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSponsorDisqualificationNEW_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSponsorDisqualificationUTLates_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSponsor_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSSSLoanDetialsPerEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSssLoan_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSubordinate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTrackerManual_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTrackerREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTrackersSubManual_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTrackersTest081112_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTrackersTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTrackers_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTrackerTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTrackerxx2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTrackerxxREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTrackerxxtest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTrackerxx_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryAttendanceTracker_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryTrackerTest2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryTrackerTest3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryTrackerTestDIN_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSummaryTrackerTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSuperior_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTempTotalHoursWork_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalGrossSalary_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursPerDay_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWork1_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWork2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWork3REV2a_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWork3REV2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWork3REV3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWork3REV4_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWork3REV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWork3Test_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWork3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWork4_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWork5_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTotalHoursWorkTest3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTransportaionAllowanceREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTransportaionAllowance_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetUndertimeWeeklyRep_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Getundertime_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetUserAccessList_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWeeklyAttendanceReportsForSethTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWeeklyAttendanceReportsForSeth_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWeeklyAttendanceReportsForVF_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWeeklyAttendanceReports_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWeeklyAttendanceSVN_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWeeklyAttendanceYearly_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWeeklyOTReports_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWeeklyScheduleAudit_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetYTD_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GraduatedTax.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HDMF.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HDMFLoan.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HDMFLoanDump.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HDMFLoan_Payment.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HDMFR.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Holiday.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRKioskLeaveType_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRKioskNotificationMode_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRKioskTracker_EmployeeInfo_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HR_GetLeavesInfo_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Impersonate_GetEmployeeList_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InitialLogEntry.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KioskCheckEmployeeModuleAccess_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LeaveAccrualDaily_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LeaveCreditsAdded.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LeaveType.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoanDetail.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoanHeader.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogoutUserTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Medicine.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Metric.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Module.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModuleEmployeeKioskv3.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonthPayPeriod_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NBIClearance.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NDComputation.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewEmployee_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NotificationMode.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OIC.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OverBreak.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pay.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payroll.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Payroll.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payroll.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payroll.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Payroll.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollAbsentSLVLEL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollDataGeneratedProjectBased_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollDataGenerated_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollDump.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollExtension.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayrollExtension.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollExtension.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollExtension.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayrollExtension.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollHoursProjectBased_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollHoursTest2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollHoursTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollHours_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollPay_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payroll_Cutoff.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payroll_Data.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payroll_DataGenerated.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payroll_DataGeneratedProjectBased.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payroll_DataTemp.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payroll_DataTemp_ProjectBased.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayslipAdjustmentsTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayslipAdjustments_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayslipAdvancesTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayslipAdvances_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayslipDetailsTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayslipDetails_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayslipGetEmployees_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayslipHeadersTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayslipHeaders_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayslipRepresentationTest_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayslipRepresentation_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pay_Details.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhilHealth.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhilHealthOLD.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Position.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rate.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Recruitment.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reference.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReportsVerifoneAgentsWeekly_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_BirthdayCelebrants_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_EmployeeContacts_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_EmployeeNumbers_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_EmployeeTaxScheme_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_GetEmployeeSalaries_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_GetMonthylEmployeeLeavesDetailedREV_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_GetMonthylEmployeeLeavesDetailed_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_GetMonthylEmployeeLeavesOLD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_GetMonthylEmployeeLeavesSLELVL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_GetMonthylEmployeeLeaves_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_GetMonthylEmployeeSickLeaves_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_GetMonthylEmployeeSL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_TaxTables_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_TaxWithHeld_GetEmployeeList_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Report_TaxWithHeld_GetReport_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Representation.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Representation03152011.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RepresentationDump.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetrieveALLLeaveApplications_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetrieveLeaveActualDays_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetrieveLeaveApplications_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetrieveSchedules_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Salt.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Schedule.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SearchEmployeeList_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SearchEmployee_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SelectEmployeeBasicInfo_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sequence.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceNowDAL.cs" />
+    <Compile Include="Models\SetEmployeeDayAbsent_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpAdjustmentInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpAdjustmentSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpAdvancesInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpAdvancesSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpAdvancesUpdate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spAllCampaignSummaryReports_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpCampaignInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpCampaignSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SPCAMPAIGNSUMMARYREPORTS3_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spCampaignSummaryReports_2012_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spCampaignSummaryReports_AllCampaign_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spCampaignSummaryReports_All_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spCampaignSummaryReports_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpCampaignUpdate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpCivilStatusSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpDepartmentInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpDepartmentSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpDepartmentUpdate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpEmployeeLogInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpEmployeeLogRestDayUpdate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpEmployeeLogSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpEmployeeLogUpdate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpEmployeeTypeInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpEmployeeTypeSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpEmployeeTypeUpdate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spGetCampaignType_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spGetEmployeeSchedule_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spGetEmployeesOverBreak_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spGetSLbyEmployee_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpHDMFLoanPaymentSelect_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpHDMFLoanSelect_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpHolidayInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpHolidaySelectByYear_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpHolidaySelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpHolidayUpdate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpLeaveCreditInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpLeaveCreditSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpLeaveCreditUpdate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpLeaveFiledSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpLeaveTypeSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SPLIT2_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Split_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpLoanPaymentSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpNotificationModeSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sponsor.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpPositionInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpPositionSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpPositionUpdate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Spread_AnnualReport_TaxWithHeld_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Spread_GetMonthlyEmployeeLeavesSLELLWOP_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Spread_GetMonthlyEmployeeLeavesSL_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Spread_GetMonthlyEmployeeLeaves_OPTSSLELLWOP_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpRepresentationInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpRepresentationSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpSaltInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpSaltSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpSaltUpdate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpScheduleInsert_OLD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpScheduleInsert_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpScheduleSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpScheduleUpdate_OLD_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpScheduleUpdate_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpSSSLoanSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpUpdateSLandVL2013Manual_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetNightDifferential_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_WhoIsActive_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SSS.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SSSLoan.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SSSLoan_Payment.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SSS_OLD.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tax.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TaxScheme.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSample.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_access.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_AuditTrail.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Campaign_Attendance_Tracker.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_EmployeesSample.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Employee_Attendance_Tracker.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Equipments.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_KioskAnnouncement.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Leaves.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_message.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_modules.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Notes.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_notification.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_ReSchedules.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_RoomReservations.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Rooms.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Temp1500LOSE_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tempSched1.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Temp_Attendance_Complete.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Temp_EmployeePay.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Temp_LoanPayments.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Temp_MetricCostDetail.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Temp_Metric_Details.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Temp_Pay_Details.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TestGeneratePayrollData_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TestM_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEST_SP_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tracker_EmployeeInfo_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tracker_GetEmployeesList_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tracker_GetNoTimeIn_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tracker_GetSummaryAttendanceTracker_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tracker_LogIn_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TranspoAllowance.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TrecDAL.cs" />
+    <Compile Include="Models\TrecKioskModule.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TrecKioskUserAccess.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UnauthorizedLog.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\v3GetEmployeeSchedules_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\v3LeaveTypeSelect_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VERIFONE_Agents_List.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\VMUserDataLogIn.cs" />
+    <Compile Include="Models\ViewModel\VMLogIn.cs" />
+    <Compile Include="Models\WFMCivilStatusSelect_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMDepartmentSelect_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMDisplayEmployees_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMDisplayNotes_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMEmployeeDetailsHistory_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMEmployeeTypeSelect_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMGetCampaign_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMGetDataHistory_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMGetDataRateHistory_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMGetEmployeeDetail_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMGetEmployeeRate_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMGetReportTo_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMLogin_Result.cs">
+      <DependentUpon>PayrollExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMPositionSelect_Result.cs">
+      <DependentUpon>Payroll.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\adminlte.css" />
+    <Content Include="Content\css\adminlte.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\css\all.css" />
+    <Content Include="Content\css\css\all.min.css" />
+    <Content Include="Content\css\css\brands.css" />
+    <Content Include="Content\css\css\brands.min.css" />
+    <Content Include="Content\css\css\fontawesome.css" />
+    <Content Include="Content\css\css\fontawesome.min.css" />
+    <Content Include="Content\css\css\regular.css" />
+    <Content Include="Content\css\css\regular.min.css" />
+    <Content Include="Content\css\css\solid.css" />
+    <Content Include="Content\css\css\solid.min.css" />
+    <Content Include="Content\css\css\svg-with-js.css" />
+    <Content Include="Content\css\css\svg-with-js.min.css" />
+    <Content Include="Content\css\css\v4-shims.css" />
+    <Content Include="Content\css\css\v4-shims.min.css" />
+    <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\css\fa-brands-400.svg" />
+    <Content Include="Content\css\fa-regular-400.svg" />
+    <Content Include="Content\css\fa-solid-900.svg" />
+    <Content Include="Content\css\fontawesome-all.css" />
+    <Content Include="Content\css\fontawesome.css" />
+    <Content Include="Content\css\fonts-googleapis.css" />
+    <Content Include="Content\css\getmdl-select.min.css" />
+    <Content Include="Content\css\ionicons.min.css" />
+    <Content Include="Content\css\material-icon.css" />
+    <Content Include="Content\css\material.css" />
+    <Content Include="Content\css\material.min.css" />
+    <Content Include="Content\css\nunito.css" />
+    <Content Include="Content\css\select2.min.css" />
+    <Content Include="Content\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="Content\css\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\css\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\css\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\DataTableCSS\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.material.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.material.min.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.uikit.css" />
+    <Content Include="Content\DataTableCSS\css\dataTables.uikit.min.css" />
+    <Content Include="Content\DataTableCSS\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTableCSS\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTableCSS\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTableCSS\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTableCSS\images\favicon.ico" />
+    <Content Include="Content\DataTableCSS\images\sort_asc.png" />
+    <Content Include="Content\DataTableCSS\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTableCSS\images\sort_both.png" />
+    <Content Include="Content\DataTableCSS\images\sort_desc.png" />
+    <Content Include="Content\DataTableCSS\images\sort_desc_disabled.png" />
+    <Content Include="Content\img\avatar1.png" />
+    <Content Include="Content\img\avatar2.png" />
+    <Content Include="Content\img\avatar3.png" />
+    <Content Include="Content\img\avatar4.png" />
+    <Content Include="Content\img\avatar5.png" />
+    <Content Include="Content\img\avatar6.jpg" />
+    <Content Include="Content\img\avatar7.jpg" />
+    <Content Include="Content\img\bg.jpg" />
+    <Content Include="Content\img\calendar.svg" />
+    <Content Include="Content\img\calendar_approve.svg" />
+    <Content Include="Content\img\compass.gif" />
+    <Content Include="Content\img\envelope.svg" />
+    <Content Include="Content\img\loader.gif" />
+    <Content Include="Content\img\new.svg" />
+    <Content Include="Content\img\target.svg" />
+    <Content Include="Content\img\team.svg" />
+    <Content Include="Content\img\tel.jpg" />
+    <Content Include="Content\img\wfm-logo.png" />
+    <Content Include="Content\img\wfm-logo1.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Payroll.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Payroll.Context.cs</LastGenOutput>
+      <DependentUpon>Payroll.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Payroll.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Payroll.edmx</DependentUpon>
+      <LastGenOutput>Payroll.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PayrollExtension.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PayrollExtension.edmx</DependentUpon>
+      <LastGenOutput>PayrollExtension.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PayrollExtension.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PayrollExtension.edmx</DependentUpon>
+      <LastGenOutput>PayrollExtension.cs</LastGenOutput>
+    </Content>
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\Payroll.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Payroll.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Payroll.edmx.diagram">
+      <DependentUpon>Payroll.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\PayrollExtension.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PayrollExtension.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PayrollExtension.edmx.diagram">
+      <DependentUpon>PayrollExtension.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\css\fa-brands-400.eot" />
+    <Content Include="Content\css\fa-brands-400.ttf" />
+    <Content Include="Content\css\fa-brands-400.woff" />
+    <Content Include="Content\css\fa-brands-400.woff2" />
+    <Content Include="Content\css\fa-regular-400.eot" />
+    <Content Include="Content\css\fa-regular-400.ttf" />
+    <Content Include="Content\css\fa-regular-400.woff" />
+    <Content Include="Content\css\fa-regular-400.woff2" />
+    <Content Include="Content\css\fa-solid-900.eot" />
+    <Content Include="Content\css\fa-solid-900.ttf" />
+    <Content Include="Content\css\fa-solid-900.woff" />
+    <Content Include="Content\css\fa-solid-900.woff2" />
+    <Content Include="Content\css\getmdl-select.min.css.map" />
+    <Content Include="Content\css\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\css\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\css\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\css\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\css\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\css\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\css\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\css\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\css\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\css\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\css\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\css\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\img\Thumbs.db" />
+    <Content Include="Content\DataTableCSS\images\Sorting icons.psd" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\DataTableJS\js\buttons.print.min.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.material.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTableJS\js\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTableJS\js\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTableJS\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTableJS\js\jquery.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\active-inactive.js" />
+    <Content Include="Scripts\js\adminlte.js" />
+    <Content Include="Scripts\js\bootstrap.js" />
+    <Content Include="Scripts\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\js\demo.js" />
+    <Content Include="Scripts\js\employee-status.js" />
+    <Content Include="Scripts\js\fastclick.min.js" />
+    <Content Include="Scripts\js\getmdl-select.min.js" />
+    <Content Include="Scripts\js\highcharts-6.1.2.js" />
+    <Content Include="Scripts\js\highcharts-data-6.1.2.js" />
+    <Content Include="Scripts\js\highcharts-drilldown-6.1.2.js" />
+    <Content Include="Scripts\js\highcharts-exporting-data-6.1.2.js" />
+    <Content Include="Scripts\js\jquery.bootstrap-growl.js" />
+    <Content Include="Scripts\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\js\jquery.knob.js" />
+    <Content Include="Scripts\js\jquery.min.js" />
+    <Content Include="Scripts\js\jquery.sparkline.min.js" />
+    <Content Include="Scripts\js\material.min.js" />
+    <Content Include="Scripts\js\moment.min.js" />
+    <Content Include="Scripts\js\objectives-gauge.js" />
+    <Content Include="Scripts\js\popper.min.js" />
+    <Content Include="Scripts\js\select2.full.min.js" />
+    <Content Include="Scripts\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\LogIn\Index.cshtml" />
+    <Content Include="Scripts\js\getmdl-select.min.js.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\_LayoutTrec.cshtml" />
+    <Content Include="Views\Shared\_LayoutServiceNow.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\HomeSN\Index.cshtml" />
+    <Content Include="Scripts\js\highcharts-exporting-6.1.2.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="fonts\" />
+    <Folder Include="Models\ViewModel\ServiceNow\" />
+    <Folder Include="Models\ViewModel\Trec\" />
+    <Folder Include="Scripts\developerdefined\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64908</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64908/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

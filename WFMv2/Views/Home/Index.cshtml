@@ -1,0 +1,230 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTrec.cshtml";
+}
+<div class="">
+<div class="container mt-5 pt-5">
+    <div class="row mb-2">
+        <div class="col-lg-3 col-md-3 col-sm-6 mt-2">
+            <!-- small box -->
+            <div class="small-box" style="background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);">
+                <div class="inner">
+                    <h3>44</h3>
+                    <p>Absent for this <br> Month</p>
+                </div>
+                <div class="icon h-100">
+                    <i class="far fa-calendar-times"></i>
+                </div>
+                <a href="" class="small-box-footer" style="color: #444 !important">See More<i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 mt-2">
+            <!-- small box -->
+            <div class="small-box" style="background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);">
+                <div class="inner">
+                    <h3>5</h3>
+                    <p>Leaves for this <br> Month</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-user-clock"></i>
+                </div>
+                <a href="leaves.html" class="small-box-footer" style="color: #444 !important">See More <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 mt-2">
+            <!-- small box -->
+            <div class="small-box" style="background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);">
+                <div class="inner">
+                    <h3>53</h3>
+                    <p>SSS Loans <br> for this Month</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <a href="sss.html" class="small-box-footer" style="color: #444 !important">See More <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 mt-2">
+            <!-- small box -->
+            <div class="small-box" style="background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);">
+                <div class="inner">
+                    <h3>53</h3>
+                    <p>HDMF Loans <br> for this Month</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-donate"></i>
+                </div>
+                <a href="" class="small-box-footer" style="color: #444 !important">See More <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Count of Employee Status</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div id="pie" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                    <script src="~/Scripts/js/employee-status.js"></script>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">List of Active and Inactive</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div id="bar" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    <script src="~/Scripts/js/active-inactive.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card w-100">
+                <div class="card-header">
+                    <h3 class="card-title">List of Active and Inactive</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="card-body w-100">
+                    <!-- Datatables -->
+                    <table class="display" id="adatatable">
+                        <thead>
+                            <tr>
+                                <th>Employee Number</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Telephone #</th>
+                                <th>Cellphone #</th>
+                                <th>Is Act</th>
+                                <th>Report To</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>041009</td>
+                                <td>Samarita</td>
+                                <td>Joel</td>
+                                <td>Miranda</td>
+                                <td>2124138</td>
+                                <td>09178004656</td>
+                                <td>Yes</td>
+                                <td>10084</td>
+                            </tr>
+                            <tr>
+                                <td>044004</td>
+                                <td>San Diego</td>
+                                <td>Anabel</td>
+                                <td>Dequito</td>
+                                <td>213345</td>
+                                <td>09105541124</td>
+                                <td>Yes</td>
+                                <td>10084</td>
+                            </tr>
+                            <tr>
+                                <td>041005</td>
+                                <td>Dote</td>
+                                <td>Abigail</td>
+                                <td>Santiago</td>
+                                <td>4221541</td>
+                                <td>09215501547</td>
+                                <td>Yes</td>
+                                <td>10084</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Datatables -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+<script type="text/javascript">
+    window.onscroll = function () { myFunction() };
+
+    var anavbar = document.getElementById("anavbar");
+    var asticky = anavbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= asticky) {
+            anavbar.classList.add("asticky")
+        } else {
+            anavbar.classList.remove("asticky");
+        }
+    }
+
+    //Upload Photo
+    function openfileDialog() {
+        $("#fileLoader").click();
+    }
+    //End Navbar script
+
+    $("#home").addClass('active');
+
+    //DataTable
+    $(document).ready(function () {
+        $('#adatatable').DataTable({
+            "bLengthChange": false,
+            "bInfo": false,
+            "bAutoWidth": false,
+            "scrollX": true
+        });
+    });
+
+    //loader
+    function onReady(callback) {
+        var intervalId = window.setInterval(function () {
+            if (document.getElementsByTagName('body')[0] !== undefined) {
+                window.clearInterval(intervalId);
+                callback.call(this);
+            }
+        }, 10000);
+    }
+
+    function setVisible(selector, visible) {
+        document.querySelector(selector).style.display = visible ? 'block' : 'none';
+    }
+
+    onReady(function () {
+        setVisible('.page', true);
+        setVisible('.loader', false);
+    });
+
+</script>
